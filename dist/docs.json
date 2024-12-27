@@ -1,0 +1,155 @@
+{
+  "api": {
+    "name": "AppIconPlugin",
+    "slug": "appiconplugin",
+    "docs": "",
+    "tags": [],
+    "methods": [
+      {
+        "name": "isSupported",
+        "signature": "() => Promise<{ value: boolean; }>",
+        "parameters": [],
+        "returns": "Promise<{ value: boolean; }>",
+        "tags": [
+          {
+            "name": "since",
+            "text": "1.0.0"
+          }
+        ],
+        "docs": "Checks if changing the app icon is supported. (iOS only)",
+        "complexTypes": [],
+        "slug": "issupported"
+      },
+      {
+        "name": "getName",
+        "signature": "() => Promise<{ value: string | null; }>",
+        "parameters": [],
+        "returns": "Promise<{ value: string | null; }>",
+        "tags": [
+          {
+            "name": "since",
+            "text": "1.0.0"
+          }
+        ],
+        "docs": "Gets the name of currently set alternate icon. If original icon is set, returns null.",
+        "complexTypes": [],
+        "slug": "getname"
+      },
+      {
+        "name": "change",
+        "signature": "(options: IconOptions) => Promise<void>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "IconOptions"
+          }
+        ],
+        "returns": "Promise<void>",
+        "tags": [
+          {
+            "name": "since",
+            "text": "1.0.0"
+          }
+        ],
+        "docs": "Changes app icon to specified alternate.",
+        "complexTypes": [
+          "IconOptions"
+        ],
+        "slug": "change"
+      },
+      {
+        "name": "reset",
+        "signature": "(options: ResetOptions) => Promise<void>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "ResetOptions"
+          }
+        ],
+        "returns": "Promise<void>",
+        "tags": [
+          {
+            "name": "since",
+            "text": "1.0.0"
+          }
+        ],
+        "docs": "Reverts app icon to original.",
+        "complexTypes": [
+          "ResetOptions"
+        ],
+        "slug": "reset"
+      }
+    ],
+    "properties": []
+  },
+  "interfaces": [
+    {
+      "name": "IconOptions",
+      "slug": "iconoptions",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "name",
+          "tags": [],
+          "docs": "Name of alternate icon to set",
+          "complexTypes": [],
+          "type": "string"
+        },
+        {
+          "name": "disable",
+          "tags": [
+            {
+              "text": "3.1.0",
+              "name": "since"
+            }
+          ],
+          "docs": "Name of icons to disable. This is not used for iOS, but required for Android.",
+          "complexTypes": [],
+          "type": "string[] | undefined"
+        },
+        {
+          "name": "suppressNotification",
+          "tags": [],
+          "docs": "Flag controlling the in app notification which shows after icon is changed. (iOS)",
+          "complexTypes": [],
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "name": "ResetOptions",
+      "slug": "resetoptions",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "suppressNotification",
+          "tags": [],
+          "docs": "Flag controlling the in app notification which shows after icon is changed (iOS).",
+          "complexTypes": [],
+          "type": "boolean"
+        },
+        {
+          "name": "disable",
+          "tags": [
+            {
+              "text": "3.1.1",
+              "name": "since"
+            }
+          ],
+          "docs": "Name of icons to disable. This is not used for iOS, but required for Android.",
+          "complexTypes": [],
+          "type": "string[] | undefined"
+        }
+      ]
+    }
+  ],
+  "enums": [],
+  "typeAliases": [],
+  "pluginConfigs": []
+}
